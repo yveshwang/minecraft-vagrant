@@ -1,0 +1,11 @@
+[Unit]
+Description=minecraft-service
+
+[Service]
+User=stallo
+WorkingDirectory=/home/stallo/minecraft/1.17.1
+ExecStart=/bin/bash -c 'cd /home/stallo/minecraft/1.17.1 && ./run.sh'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
