@@ -3,6 +3,32 @@
 15.08.2021
 yh
 
+## systemd
+
+Please feel free to use the `minecraft-service.service` file to install on debian 10 for example. 
+
+```
+# symlink the service finto 
+ln -s /home/stallo/minecraft/1.17.1/minecraft-service.service /etc/systemd/system/minecraft-service.service
+
+# reload service daemon
+systemctl daemon-reload
+
+# start the service
+systemctl start minecraft-service.service
+
+# check status
+systemctl status minecraft-service.service
+
+# ensure it is availabe on next boot
+systemctl enable minecraft-service.service
+
+# service logs to syslog
+tail -n 20 /var/log/syslog
+```
+
+## dependencies
+
 * BiomesOPlenty-1.17.1-14.0.0.29-universal.jar
 * forge-1.17.1-37.0.17-installer.jar
 
